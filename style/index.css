@@ -1,0 +1,81 @@
+:root {
+    --clr-primary-400: #0e5afe;
+
+    --clr-secondary-500: #1889f9;
+    --clr-secondary-600: #ff0000;
+}
+
+body {
+    background: linear-gradient(to left, var(--clr-primary-400), var(--clr-secondary-600));
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0 auto;
+    font-family: 'Arial', sans-serif;
+}
+
+.invitation-card {
+    background: white;
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.179);
+    text-align: center;
+    max-width: 400px;
+    animation: cardEnter 1s ease-out;
+}
+
+.title {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    color: var(--clr-secondary-500);
+    animation: titleGlow 2s infinite;
+}
+
+p {
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+    color: #666666;
+}
+
+button {
+    color: white;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    font-size: 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.acc-btn {
+    background: var(--clr-primary-400);
+    &:hover {
+        background: var(--clr-secondary-500);
+    }
+}
+.dec-btn {
+    background: rgb(200, 49, 49);
+    &:hover {
+        background: var(--clr-secondary-600);
+    }
+}
+
+@keyframes cardEnter {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+@keyframes titleGlow {
+    0%, 100% {
+        text-shadow: 0 0 10px var(--clr-secondary-500), 0 0 20px var(--clr-secondary-500), 0 0 30px var(--clr-secondary-500);
+    }
+    50% {
+        text-shadow: 0 0 20px var(--clr-secondary-500), 0 0 30px var(--clr-secondary-500), 0 0 40px var(--clr-secondary-500);
+    }
+}
